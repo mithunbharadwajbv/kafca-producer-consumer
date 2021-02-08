@@ -15,6 +15,7 @@ type Config struct {
 	KafcaHost string
 	Topic     string
 	Partition int
+	ApplicattionPort string
 }
 
 func init() {

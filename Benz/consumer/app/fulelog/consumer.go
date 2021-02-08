@@ -14,6 +14,7 @@ var (
 	partition = config.Conf.Partition
 )
 
+// Works as a broker and listen to all events posted by the producer and forward for logging in a file
 func FuelLogConsumer() {
 
 	conn, err := kafka.DialLeader(context.Background(), "tcp", kafcaHost, topic, partition)
@@ -28,7 +29,10 @@ func FuelLogConsumer() {
 	}()
 
 	for {
-		mes, _ := conn.ReadMessage(100)
+		mes, err := conn.ReadMessage(100)
+		if err != nil {
+			continue
+		}
 		Log(string(mes.Value))
 	}
 }

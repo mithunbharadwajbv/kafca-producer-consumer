@@ -17,6 +17,7 @@ var (
 	filelogger = utils.GetFileLogger()
 )
 
+// Business Logig to log amount of fuel consumed by the car
 func Log(input string) {
 
 	logger.Info(fmt.Sprintf("received data : %s \n", input))
@@ -34,7 +35,7 @@ func Log(input string) {
 		for i := 0; i < 2; i++ {
 			costString, err = redisClient.GetValue(city)
 			if err != nil {
-				utils.SaveCityPrice() //call api to populate redis
+				utils.SaveCityPrice() //call api to populate redis in case of cache miss
 			} else {
 				break
 			}
@@ -70,5 +71,4 @@ func Log(input string) {
 			return
 		}
 	}
-
 }
