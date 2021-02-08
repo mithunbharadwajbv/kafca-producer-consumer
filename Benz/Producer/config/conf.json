@@ -1,0 +1,5 @@
+{
+    "KafcaHost" : "localhost:29092",
+    "Topic" :   "my-topic",
+    "Partition" : 0
+}
