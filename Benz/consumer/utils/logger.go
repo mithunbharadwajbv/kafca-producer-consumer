@@ -33,7 +33,7 @@ func init() {
 
 	//create filelogger
 	logConfig = zap.Config{
-		OutputPaths: []string{"stdout", "./../fuellog.json"},
+		OutputPaths: []string{"stdout", "./fuellog.json"},
 		Level:       zap.NewAtomicLevelAt(zap.InfoLevel),
 		Encoding:    "json",
 		EncoderConfig: zapcore.EncoderConfig{

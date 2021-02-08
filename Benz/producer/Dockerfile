@@ -4,10 +4,8 @@ WORKDIR /app
 
 COPY ./ /app
 
-Ad
+# RUN go mod download
 
 RUN go get github.com/githubnemo/CompileDaemon
-
-Run go mod vendor
 
 ENTRYPOINT CompileDaemon --build="go build main.go" --command=./main

@@ -1,6 +1,6 @@
 {
     "KafcaHost" : "kafka:9092",
+    "RadisPort" : "redis:6379",
     "Topic" :   "my-topic",
-    "Partition" : 0,
-    "RadisPort" : "redis:6379"
+    "Partition" : 0
 }

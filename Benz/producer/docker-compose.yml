@@ -33,7 +33,7 @@ services:
       - ../data/redis:/data
     restart: always
 
-  go-docker-image:
+  producer-image:
     container_name: producer
     build: ./
     depends_on:
@@ -42,11 +42,12 @@ services:
     ports:
       - '8080:8080'
 
-  go-docker-image-consumer:
+  consumer-image:
     container_name: consumer
     build: ../consumer/
     depends_on:
       - kafka
       - redis
-
+    volumes:
+      - ../consumer/:/app
       
