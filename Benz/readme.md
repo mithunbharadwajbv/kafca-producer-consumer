@@ -46,10 +46,13 @@ curl --location --request POST 'localhost:8080/logfuel' \
     "mobile" : true
 }'
 
-6. repeat above 3 steps multiple times to get multiple entries in logfile will be created inside  docker coontainer
+6. repeat above 3 steps multiple times to get multiple entries in logfile will be created inside  docker coontainer and also inside consumer folder named fuellog.json
 
+7. view logs of producer by : docker logs -f producer
+in terminal 2
 
-
+8. view logs of consumer by : docker logs -f consumer
+in terminal 3
 
 # Producer Structure
 
@@ -83,7 +86,7 @@ curl --location --request POST 'localhost:8080/logfuel' \
 
 3. uber/zap has been used for high efficient logging
 
-[run-pplication]
+[run-pplication-locally]
 
 Run In terminal-1
 
@@ -116,7 +119,7 @@ Run In terminal-1
 
 2. utils/util.go contains 3rd party api to popullate redis cache when data is not found in cache(this automatically happens through function call no cron job has bee kept to accomplish this functionality)
 
-[run-application]
+[run-pplication-locally]
 
 Run In terminal-1
 
