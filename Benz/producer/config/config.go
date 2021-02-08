@@ -32,6 +32,4 @@ func init() {
 	err = viper.Unmarshal(&Conf)
 }
 
-func Simple() {
-	fmt.Println(Conf)
-}
+

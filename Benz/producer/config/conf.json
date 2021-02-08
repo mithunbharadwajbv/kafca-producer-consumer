@@ -1,5 +1,5 @@
 {
-    "KafcaHost" : "localhost:29092",
+    "KafcaHost" : "kafka:9092",
     "Topic" :   "my-topic",
     "Partition" : 0,
     "ApplicattionPort" : ":8080"
