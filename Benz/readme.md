@@ -18,6 +18,38 @@ note : if random city is encountered our consimer is gonna panic(design desissio
 
 5. configration parametes are coganised and accessed through viper
 
+# Run Using docker
+
+1. cd to producers main
+
+2. docker-compose up -d --build
+
+3. Post request to send notification of fuel fill has been initiated
+
+curl --location --request POST 'localhost:8080/logfuel' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "city" : "Bengaluru",
+    "flag" : "true",
+    "mobile" : true
+}'
+
+4. wait for sometime (more that 10 second)
+
+5. Post request to send notification of fuel fill has been ended
+
+curl --location --request POST 'localhost:8080/logfuel' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "city" : "Bengaluru",
+    "flag" : "false",
+    "mobile" : true
+}'
+
+6. repeat above 3 steps multiple times to get multiple entries in logfile will be created inside  docker coontainer
+
+
+
 
 # Producer Structure
 
